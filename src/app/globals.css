@@ -13,3 +13,73 @@ body {
 ::selection {
   background-color: rgba(194, 59, 34, 0.2);
 }
+
+/* Ink wash reveal mask for artwork cards */
+@keyframes inkReveal {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+    filter: blur(8px);
+  }
+  50% {
+    filter: blur(2px);
+  }
+  100% {
+    clip-path: circle(100% at 50% 50%);
+    filter: blur(0px);
+  }
+}
+
+/* Ink drip animation */
+@keyframes inkDrip {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 0.15;
+  }
+}
+
+/* Ink splash for landing */
+@keyframes inkSplash {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+    border-radius: 50%;
+  }
+  50% {
+    opacity: 0.3;
+    border-radius: 45% 55% 50% 50%;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    border-radius: 40% 60% 55% 45%;
+  }
+}
+
+/* Brush stroke animation */
+@keyframes brushStroke {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Floating ink particles */
+@keyframes inkFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.05;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.1;
+  }
+}
