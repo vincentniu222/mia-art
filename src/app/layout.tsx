@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Mia's Art — Chinese Ink Paintings",
-  description: "A portfolio of Chinese ink paintings by Mia, age 7.",
+  title: "Mia's Little Gallery | Mia的小画廊",
+  description: "A 7-year-old artist's ink and watercolor world / 七岁小画家的水墨世界",
 };
 
 export default function RootLayout({
@@ -15,8 +12,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="zh">
+      <body className="min-h-screen antialiased">
+        {children}
+      </body>
     </html>
   );
 }

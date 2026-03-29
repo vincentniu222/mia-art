@@ -2,20 +2,25 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        rice: '#F5F0E8',
+        ink: '#2C2C2C',
+        seal: '#C23B22',
+        spring: { light: '#E8F5E9', accent: '#81C784' },
+        summer: { light: '#FFFDE7', accent: '#FFD54F' },
+        autumn: { light: '#FFF3E0', accent: '#FFB74D' },
+        winter: { light: '#ECEFF1', accent: '#90A4AE' },
+      },
+      fontFamily: {
+        serif: ['Playfair Display', 'Noto Serif SC', 'serif'],
+        brush: ['Ma Shan Zheng', 'cursive'],
       },
     },
   },
   plugins: [],
 };
-
 export default config;
