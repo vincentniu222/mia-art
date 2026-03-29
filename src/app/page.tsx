@@ -1,8 +1,42 @@
+'use client';
+
+import { useState } from 'react';
+import { Landing } from '@/components/Landing';
+import { SeasonSection } from '@/components/SeasonSection';
+import { SeasonDivider } from '@/components/SeasonDivider';
+import { ArtworkModal } from '@/components/ArtworkModal';
+import { About } from '@/components/About';
+import { LanguageToggle } from '@/components/LanguageToggle';
+import { artworks, seasons, type Artwork } from '@/data/artworks';
+
 export default function Home() {
+  const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">Mia&apos;s Art</h1>
-      <p className="mt-4 text-lg text-gray-600">Chinese Ink Paintings</p>
+    <main>
+      <LanguageToggle />
+      <Landing />
+
+      {seasons.map((season) => (
+        <div key={season.key}>
+          <SeasonDivider />
+          <SeasonSection
+            season={season.key}
+            title={season.title}
+            subtitle={season.subtitle}
+            artworks={artworks.filter(a => a.season === season.key)}
+            onArtworkClick={setSelectedArtwork}
+          />
+        </div>
+      ))}
+
+      <SeasonDivider />
+      <About />
+
+      <ArtworkModal
+        artwork={selectedArtwork}
+        onClose={() => setSelectedArtwork(null)}
+      />
     </main>
   );
 }

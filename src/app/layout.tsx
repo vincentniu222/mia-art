@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
   title: "Mia's Little Gallery | Mia的小画廊",
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="zh">
       <body className="min-h-screen antialiased">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
