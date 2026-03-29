@@ -1,1 +1,6 @@
-node_modules/\n.next/\nout/\npdf/\nextracted/\n*.log
+node_modules/
+.next/
+out/
+pdf/
+extracted/
+*.log
