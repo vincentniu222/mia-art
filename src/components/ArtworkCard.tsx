@@ -24,31 +24,14 @@ export function ArtworkCard({ artwork, index, onClick }: ArtworkCardProps) {
       className="group cursor-pointer"
     >
       <div className="relative bg-white/70 p-3 md:p-4 shadow-md hover:shadow-xl transition-shadow duration-300 rounded-sm">
-        {/* Ink wash reveal overlay */}
-        <motion.div
-          initial={{ scaleX: 1 }}
-          whileInView={{ scaleX: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.8, delay: index * 0.15 + 0.3, ease: 'easeInOut' }}
-          className="absolute inset-0 bg-rice origin-right z-10 pointer-events-none"
-        />
-
         <div className="relative overflow-hidden">
-          {/* Ink blur reveal on image */}
-          <motion.div
-            initial={{ filter: 'blur(6px) saturate(0)' }}
-            whileInView={{ filter: 'blur(0px) saturate(1)' }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 1, delay: index * 0.15 + 0.2 }}
-          >
-            <Image
-              src={artwork.src}
-              alt={artwork.title[lang]}
-              width={600}
-              height={600}
-              className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
-            />
-          </motion.div>
+          <Image
+            src={artwork.src}
+            alt={artwork.title[lang]}
+            width={600}
+            height={600}
+            className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
+          />
         </div>
 
         {/* Subtle ink corner decoration */}
