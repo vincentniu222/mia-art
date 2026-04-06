@@ -83,9 +83,9 @@ export const artworks: Artwork[] = [
     season: 'winter',
   },
   {
-    id: 'polar-bears',
+    id: 'christmas-puppy',
     src: '/artworks/winter/polar-bears.jpg',
-    title: { zh: '北极熊', en: 'Polar Bears' },
+    title: { zh: '圣诞小狗', en: 'Christmas Puppy' },
     season: 'winter',
   },
   {
